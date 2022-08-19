@@ -22,4 +22,14 @@ public class DecoratorPatternTest {
 
         decoratorPatternClient.execute();
     }
+
+    @Test
+    void decorator2() {
+        Component component = new RealComponent();
+        MessageDecorator decorator = new MessageDecorator(component);
+        TimeDecorator timeDecorator = new TimeDecorator(decorator);
+        DecoratorPatternClient decoratorPatternClient = new DecoratorPatternClient(timeDecorator);
+
+        decoratorPatternClient.execute();
+    }
 }
