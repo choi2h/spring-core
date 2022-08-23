@@ -1,6 +1,7 @@
 package hello.proxy;
 
 import hello.proxy.config.V2_dynamicproxy.DynamicProxyBasicConfig;
+import hello.proxy.config.V2_dynamicproxy.DynamicProxyFilterConfig;
 import hello.proxy.trace.logtrace.LogTrace;
 import hello.proxy.trace.logtrace.ThreadLocalLogTrace;
 import org.springframework.boot.SpringApplication;
@@ -8,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 
-@Import(DynamicProxyBasicConfig.class) //클래스를 스프링 빈으로 등록
+@Import(DynamicProxyFilterConfig.class) //클래스를 스프링 빈으로 등록
 @SpringBootApplication(scanBasePackages = "hello.proxy.app") //주의
 public class ProxyApplication {
 
